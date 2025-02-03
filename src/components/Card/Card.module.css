@@ -1,0 +1,33 @@
+.card {
+    background-color: #F3F3F3;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    flex-basis: 240px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    outline: 2px solid #FFD700; 
+    transition: 0.3s;
+}
+
+.spriteWrapper {
+    background-color: #FAE3B0;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15%;
+}
+
+.img {
+    display: block;
+    margin: auto;
+}
+
+.name {
+    padding: 1.5rem;
+    color: #2D2D2D;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
