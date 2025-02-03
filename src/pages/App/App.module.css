@@ -1,0 +1,11 @@
+#root {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

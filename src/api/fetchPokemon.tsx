@@ -8,6 +8,6 @@ export async function fetchPokemon(id: number) {
         }
         return pokemon;
     } catch (error) {
-        if (typeof error  === 'string') throw new Error(error);
+       console.log(`Error:" ${error}`);
     }
 }
