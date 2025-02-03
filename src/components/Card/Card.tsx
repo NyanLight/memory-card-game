@@ -7,10 +7,10 @@ export function Card({
 }: {
   name: string;
   url: string;
-  handler: (e: EventTarget, name: string) => void;
+  handler: (name: string) => void;
 }) {
   return (
-    <article className={styles.card} onClick={(e) => handler(e, name)}>
+    <article className={styles.card} onClick={() => handler(name)}>
       <div className={styles.spriteWrapper}>
         <img className={styles.img} src={url} alt="" />
       </div>

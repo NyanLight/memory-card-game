@@ -39,7 +39,7 @@ export function App() {
     fillPokemons();
   }, []);
 
-  const handleClick = (e: EventTarget, name: string) => {
+  const handleClick = (name: string) => {
     if (picked.includes(name as never)) {
       setPicked([]);
       setCurrentScore(0);
@@ -55,10 +55,12 @@ export function App() {
 
   return (
     <div className={styles.game}>
-       <header className={styles.header}>
+      <header className={styles.header}>
         <div>
           <h1 className={styles.title}>Pokemon Memory Game</h1>
-          <div className={styles.description}>Click on every pokemon one time each.</div>
+          <div className={styles.description}>
+            Click on every pokemon one time each.
+          </div>
         </div>
         <div className={styles.scores}>
           <div>Score: {currentScore}</div>
@@ -72,13 +74,12 @@ export function App() {
               <Card
                 name={pokemon.name}
                 url={pokemon.image}
-                handler={(e) => handleClick(e, pokemon.name)}
+                handler={() => handleClick(pokemon.name)}
               />
             ))}
           </div>
         )}
       </section>
     </div>
-     
   );
 }
