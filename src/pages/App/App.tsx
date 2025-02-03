@@ -13,6 +13,15 @@ export function App() {
     if (newScore > bestScore) setBestScore(newScore);
   } 
 
+  const shiftPokemons = ()  => {
+    const array = pokemons;
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    setPokemons(array);
+  }
+
   useEffect(() => {
     const fillPokemons = async () => {
       const newPokemons = [];
@@ -29,13 +38,14 @@ export function App() {
     if (picked.includes(name)) {
       setPicked([]);
       setCurrentScore(0);
+      shiftPokemons();
     } else {
       const newPickedArray = [...picked, name];
       setPicked(newPickedArray);
       setCurrentScore(newPickedArray.length);
       updateBestScore(newPickedArray.length);
+      shiftPokemons();
     }
-    
   }
 
   return (
